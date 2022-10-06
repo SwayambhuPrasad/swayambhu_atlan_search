@@ -38,23 +38,31 @@ function App() {
   return (
     <>
       {/* header */}
-      <div style={{ "color": "blue", fontSize: 40, fontWeight: "bold", textAlign: 'center' }} > atlan</div>
-
+      <header style={{ "border": "grey", "width": "100%", "height": "8em" }} className="shadow p-3 mb-5 bg-white rounded">
+        <h1 style={{ "color": "#030EFF", textAlign: 'center', "line-height": "100px", "font-size": "8em" }} >atlan</h1>
+      </header>
       {/* dropDown */}
       <div Style="margin:45px">
-        <label> Select query from dropdown</label>
+        <label style={{ "color": "#00688E", "font-size": "1.5em", "font-weight": "bold", "margin-bottom": "10px" }} title="Select a query from dropdown to display the desired table output"> Select a query</label>
         {MyComponent()}
       </div>
 
       {/* Search bar */}
       <div className='container' Style="margin:30px">
-        <div><label> Search your selection</label></div>
+        <div><label style={{ "color": "#00688E", "font-size": "1.5em", "font-weight": "bold", "margin-bottom": "10px" }} title="Search for keywords to display from the table"> Search your selection</label></div>
         <div><input type="text" placeholder='Search...' className="search" onChange={(e) => setQuery(e.target.value)} /></div>
       </div>
 
       {/* Table */}
       <div Style="margin:30px" >
+        <div><label style={{ "color": "#118C77", "font-size": "2em", "font-weight": "bold", "margin-bottom": "10px" }}> Result:</label></div>
         <Table data={search(sampleData)} keys={keys} />
+      </div>
+
+      {/* Footer */}
+      <div className="text-center p-3" style={{ "background-color": "rgba(0, 0, 0, 0.2)" }}>
+        © 2022 Copyright:
+        <a className="text-dark" href="https://atlan.com/">atlan.com</a>
       </div>
     </>
   );
